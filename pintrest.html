@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="shortcut icon" href="instagram.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+    <div class="input-container">
+        <h1>Fill the Answer</h1>
+        <input type="text" name="code" id="code" placeholder="Code  Fill" required>
+        <button type="submit" id="btn-check" class="btn-check" data-toggle-id="btn-check">Check</button>
+        <a href="index.html">Home</a>
+    </div>
+</div>
+    
+    <div class="stage1" hidden>
+
+        <h2>It's correct</h2>
+        <h1>Go fast</h1>
+        <h2>Maths Department</h2>
+    </div>
+    <div class="stage2" hidden>
+
+        <h2>It's correct</h2>
+        <h1>Go fast</h1>
+        <h2>Micro Biology Department</h2>
+    </div>
+    
+    <div class="stage3" hidden>
+
+        <h2>It's correct</h2>
+        <h1>Go fast</h1>
+        <h2>Physical Education Department</h2>
+    </div>
+    <div class="stage4" hidden>
+
+        <h2>It's correct</h2>
+        <h1>Go fast</h1>
+        <h2>History Department</h2>
+    </div>
+    
+    <div class="stage5" hidden>
+
+        <h2>It's correct</h2>
+        <h1>Go fast</h1>
+        <h2>Computer Science Department</h2>
+    </div>
+    
+    <div class="else" hidden>
+        <h2>Incorrect</h2> 
+    </div>
+    <script>
+      
+      let codeEl = document.querySelector('#code')
+
+let btnCheckEl = document.querySelector('#btn-check')
+
+let stage1El  = document.querySelector('.stage1')
+
+let stage2El  = document.querySelector('.stage2')
+
+let stage3El  = document.querySelector('.stage3')
+
+let stage4El  = document.querySelector('.stage4')
+
+let stage5El  = document.querySelector('.stage5')
+
+let elseEl = document.querySelector('.else')
+
+document.addEventListener('click',(event)=>{
+
+let id = event.target.dataset.toggleId
+
+if (!id) return
+
+if (codeEl.value == 'free(var-name)') {
+
+stage1El.hidden = !stage1El.hidden
+
+elseEl.hidden = true
+
+stage2El.hidden = true
+stage3El.hidden = true
+stage4El.hidden = true
+stage5El.hidden = true
+
+}
+
+else if(codeEl.value == 'ff02::9') {
+
+stage2El.hidden = !stage2El.hidden
+
+elseEl.hidden = true
+
+stage1El.hidden = true
+stage3El.hidden = true
+stage4El.hidden = true
+stage5El.hidden = true
+
+}
+
+else if(codeEl.value == 'letterg') {
+
+stage3El.hidden = !stage3El.hidden
+
+elseEl.hidden = true
+
+stage1El.hidden = true
+stage2El.hidden = true
+stage4El.hidden = true
+stage5El.hidden = true
+
+}
+
+else if(codeEl.value == 'table') {
+
+stage4El.hidden = !stage4El.hidden
+
+elseEl.hidden = true
+
+stage1El.hidden = true
+stage2El.hidden = true
+stage3El.hidden = true
+stage5El.hidden = true
+
+}
+else if(codeEl.value == 'wednesday') {
+
+stage5El.hidden = !stage5El.hidden
+
+elseEl.hidden = true
+
+stage1El.hidden = true
+stage2El.hidden = true
+stage3El.hidden = true
+stage4El.hidden = true
+
+}
+
+
+else{
+
+elseEl.hidden = !elseEl.hidden
+
+stage1El.hidden = true
+
+stage2El.hidden = true
+
+stage3El.hidden = true
+
+stage4El.hidden = true
+
+stage5El.hidden = true
+
+
+}
+
+});
+
+    </script>
+
+</body>
+</html>
